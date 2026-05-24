@@ -1,0 +1,1275 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: RAGチャットフロー
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: package
+  value:
+    plugin_unique_identifier: fujitsu/fujitsu:0.2.0@cf76e92d5d7615cfb271a096ed4d91c4e5f1326113c0d9815394bb22a914c05c
+    version: null
+kind: app
+version: 0.4.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1778226206897-source-1778460851536-target
+      source: '1778226206897'
+      sourceHandle: source
+      target: '1778460851536'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1778460851536-source-1778460871741-target
+      source: '1778460851536'
+      sourceHandle: source
+      target: '1778460871741'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1778460871741-source-1778461328049-target
+      source: '1778460871741'
+      sourceHandle: source
+      target: '1778461328049'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1778461328049-source-1778464980583-target
+      source: '1778461328049'
+      sourceHandle: source
+      target: '1778464980583'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1778464980583-source-1778465749909-target
+      source: '1778464980583'
+      sourceHandle: source
+      target: '1778465749909'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1778465749909-source-1778466220985-target
+      source: '1778465749909'
+      sourceHandle: source
+      target: '1778466220985'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1778466220985-source-1778466314865-target
+      source: '1778466220985'
+      sourceHandle: source
+      target: '1778466314865'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778466314865-source-1778466342128-target
+      source: '1778466314865'
+      sourceHandle: source
+      target: '1778466342128'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1778466365940-source-1778466393999-target
+      source: '1778466365940'
+      sourceHandle: source
+      target: '1778466393999'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: tool
+      id: 1778466393999-source-1778466484000-target
+      source: '1778466393999'
+      sourceHandle: source
+      target: '1778466484000'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778466484000-source-1778466522319-target
+      source: '1778466484000'
+      sourceHandle: source
+      target: '1778466522319'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778466342128-source-1778474633397-target
+      source: '1778466342128'
+      sourceHandle: source
+      target: '1778474633397'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778474633397-source-1778466365940-target
+      source: '1778474633397'
+      sourceHandle: source
+      target: '1778466365940'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778466522319-source-1778474670486-target
+      source: '1778466522319'
+      sourceHandle: source
+      target: '1778474670486'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778474670486-source-1778474706291-target
+      source: '1778474670486'
+      sourceHandle: source
+      target: '1778474706291'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778474706291-source-1778474726834-target
+      source: '1778474706291'
+      sourceHandle: source
+      target: '1778474726834'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: tool
+      id: 1778474726834-source-1778474748936-target
+      source: '1778474726834'
+      sourceHandle: source
+      target: '1778474748936'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: end
+      id: 1778474748936-source-1778466540109-target
+      source: '1778474748936'
+      sourceHandle: source
+      target: '1778466540109'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 開始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          default: ''
+          hint: ''
+          label: input_file
+          max_length: 48
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: input_file
+      height: 88
+      id: '1778226206897'
+      position:
+        x: 0
+        y: 2
+      positionAbsolute:
+        x: 0
+        y: 2
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_array_file: false
+        selected: false
+        title: テキスト抽出
+        type: document-extractor
+        variable_selector:
+        - '1778226206897'
+        - input_file
+      height: 92
+      id: '1778460851536'
+      position:
+        x: 342
+        y: 0
+      positionAbsolute:
+        x: 342
+        y: 0
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import base64\nimport os\n\ndef main(arg1: str, arg2):\n    file_bytes\
+          \ = arg1.encode(\"utf-8\")\n    file_content_b64 = base64.b64encode(file_bytes).decode(\"\
+          ascii\")\n    txt_name = os.path.splitext(arg2)[0] + \".txt\"\n    return\
+          \ {\n        \"file_content_b64\": file_content_b64,\n        \"file_name\"\
+          : txt_name,\n        \"content_type\": \"text/plain\",\n    }\n"
+        code_language: python3
+        outputs:
+          content_type:
+            children: null
+            type: string
+          file_content_b64:
+            children: null
+            type: string
+          file_name:
+            children: null
+            type: string
+        selected: false
+        title: 抽出したテキストをb64変換
+        type: code
+        variables:
+        - value_selector:
+          - '1778460851536'
+          - text
+          value_type: string
+          variable: arg1
+        - value_selector:
+          - '1778226206897'
+          - input_file
+          - name
+          value_type: file
+          variable: arg2
+      height: 52
+      id: '1778460871741'
+      position:
+        x: 684
+        y: 20
+      positionAbsolute:
+        x: 684
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Base64-encoded file content.
+            ja_JP: Base64エンコードされたファイル内容。
+            pt_BR: Base64-encoded file content.
+            zh_Hans: Base64-encoded file content.
+          label:
+            en_US: File Content (Base64)
+            ja_JP: ファイル内容（Base64）
+            pt_BR: File Content (Base64)
+            zh_Hans: File Content (Base64)
+          llm_description: Base64-encoded content of the file to upload.
+          max: null
+          min: null
+          name: file_content_b64
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Name of the file including extension (e.g. document.pdf).
+            ja_JP: 'ファイル名（拡張子を含む。例: document.pdf）。'
+            pt_BR: Name of the file including extension (e.g. document.pdf).
+            zh_Hans: Name of the file including extension (e.g. document.pdf).
+          label:
+            en_US: File Name
+            ja_JP: ファイル名
+            pt_BR: File Name
+            zh_Hans: File Name
+          llm_description: File name with extension.
+          max: null
+          min: null
+          name: file_name
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: application/octet-stream
+          form: llm
+          human_description:
+            en_US: 'MIME type of the file (default: application/octet-stream).'
+            ja_JP: 'ファイルのMIMEタイプ（デフォルト: application/octet-stream）。'
+            pt_BR: 'MIME type of the file (default: application/octet-stream).'
+            zh_Hans: 'MIME type of the file (default: application/octet-stream).'
+          label:
+            en_US: Content Type
+            ja_JP: Content-Type
+            pt_BR: Content Type
+            zh_Hans: Content Type
+          llm_description: MIME type of the file.
+          max: null
+          min: null
+          name: content_type
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          content_type: ''
+          file_content_b64: ''
+          file_name: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: UploadFiles
+        tool_configurations: {}
+        tool_description: RAG用にファイルをアップロードします。ファイル内容（Base64）とファイル名の指定が必要です。
+        tool_label: UploadFiles
+        tool_name: upload_files
+        tool_node_version: '2'
+        tool_parameters:
+          content_type:
+            type: mixed
+            value: '{{#1778460871741.content_type#}}'
+          file_content_b64:
+            type: mixed
+            value: '{{#1778460871741.file_content_b64#}}'
+          file_name:
+            type: mixed
+            value: '{{#1778460871741.file_name#}}'
+        type: tool
+      height: 52
+      id: '1778461328049'
+      position:
+        x: 1026
+        y: 20
+      positionAbsolute:
+        x: 1026
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\ndef main(arg1: list[dict]):\n    file_id = arg1[0][\"data\"][\"results\"\
+          ][0][\"id\"]\n    return {\n        \"file_id\": file_id,\n    }\n"
+        code_language: python3
+        outputs:
+          file_id:
+            children: null
+            type: string
+        selected: false
+        title: file_id抽出
+        type: code
+        variables:
+        - value_selector:
+          - '1778461328049'
+          - json
+          value_type: array[object]
+          variable: arg1
+      height: 52
+      id: '1778464980583'
+      position:
+        x: 1368
+        y: 20
+      positionAbsolute:
+        x: 1368
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Name for the new retriever.
+            ja_JP: 新規リトリーバーの名前。
+            pt_BR: Name for the new retriever.
+            zh_Hans: Name for the new retriever.
+          label:
+            en_US: Name
+            ja_JP: 名前
+            pt_BR: Name
+            zh_Hans: Name
+          llm_description: Name for the new retriever (RAG namespace).
+          max: null
+          min: null
+          name: name
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          name: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: CreateRetriever
+        tool_configurations: {}
+        tool_description: リトリーバー（RAGデータ領域）を新規作成します。名前の指定が必要です。
+        tool_label: CreateRetriever
+        tool_name: create_retriever
+        tool_node_version: '2'
+        tool_parameters:
+          name:
+            type: mixed
+            value: DifyRAGありチャット用リトリーバー
+        type: tool
+      height: 52
+      id: '1778465749909'
+      position:
+        x: 1710
+        y: 20
+      positionAbsolute:
+        x: 1710
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\ndef main(arg1: list[dict]):\n    retriever_id = arg1[0][\"data\"\
+          ][\"id\"]\n    return {\n        \"retriever_id\": retriever_id,\n    }\n"
+        code_language: python3
+        outputs:
+          retriever_id:
+            children: null
+            type: string
+        selected: false
+        title: retriever_id抽出
+        type: code
+        variables:
+        - value_selector:
+          - '1778465749909'
+          - json
+          value_type: array[object]
+          variable: arg1
+      height: 52
+      id: '1778466220985'
+      position:
+        x: 2052
+        y: 20
+      positionAbsolute:
+        x: 2052
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the retriever ID to embed files into.
+            ja_JP: Embedding先のリトリーバーIDを指定します。
+            pt_BR: Specify the retriever ID to embed files into.
+            zh_Hans: Specify the retriever ID to embed files into.
+          label:
+            en_US: Retriever ID
+            ja_JP: リトリーバーID
+            pt_BR: Retriever ID
+            zh_Hans: Retriever ID
+          llm_description: The retriever ID to embed files into.
+          max: null
+          min: null
+          name: retriever_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Comma separated file IDs to embed (e.g. file-id1,file-id2).
+            ja_JP: 'Embedding対象のファイルIDをカンマ区切りで指定（例: file-id1,file-id2）。'
+            pt_BR: Comma separated file IDs to embed (e.g. file-id1,file-id2).
+            zh_Hans: Comma separated file IDs to embed (e.g. file-id1,file-id2).
+          label:
+            en_US: File IDs
+            ja_JP: ファイルID一覧
+            pt_BR: File IDs
+            zh_Hans: File IDs
+          llm_description: Comma separated file IDs to embed into the retriever.
+          max: null
+          min: null
+          name: file_ids
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          file_ids: ''
+          retriever_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: EmbeddingFiles
+        tool_configurations: {}
+        tool_description: アップロードしたファイルをRAGデータに変換（Embedding）します。リトリーバーIDとファイルIDの指定が必要です。
+        tool_label: EmbeddingFiles
+        tool_name: embedding_files
+        tool_node_version: '2'
+        tool_parameters:
+          file_ids:
+            type: mixed
+            value: '{{#1778464980583.file_id#}}'
+          retriever_id:
+            type: mixed
+            value: '{{#1778466220985.retriever_id#}}'
+        type: tool
+      height: 52
+      id: '1778466314865'
+      position:
+        x: 2394
+        y: 20
+      positionAbsolute:
+        x: 2394
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the retriever ID to check status.
+            ja_JP: 状態を確認するリトリーバーのIDを指定します。
+            pt_BR: Specify the retriever ID to check status.
+            zh_Hans: Specify the retriever ID to check status.
+          label:
+            en_US: Retriever ID
+            ja_JP: リトリーバーID
+            pt_BR: Retriever ID
+            zh_Hans: Retriever ID
+          llm_description: The ID of the retriever to check. If origin_ids in response
+            is empty, embedding is still in progress.
+          max: null
+          min: null
+          name: retriever_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          retriever_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: GetRetriever
+        tool_configurations: {}
+        tool_description: リトリーバーの詳細情報とEmbedding状態を取得します。リトリーバーIDの指定が必要です。
+        tool_label: GetRetriever
+        tool_name: get_retriever
+        tool_node_version: '2'
+        tool_parameters:
+          retriever_id:
+            type: mixed
+            value: '{{#1778466220985.retriever_id#}}'
+        type: tool
+      height: 52
+      id: '1778466342128'
+      position:
+        x: 2736
+        y: 20
+      positionAbsolute:
+        x: 2736
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Chat room name.
+            ja_JP: 作成するチャットルームの名称。
+            pt_BR: Chat room name.
+            zh_Hans: Chat room name.
+          label:
+            en_US: Name
+            ja_JP: 名前
+            pt_BR: Name
+            zh_Hans: Name
+          llm_description: Chat room name.
+          max: null
+          min: null
+          name: name
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Optional: comma separated retriever IDs (e.g. id1,id2,id3).'
+            ja_JP: '任意: リトリーバーIDのカンマ区切り (例: id1,id2,id3)。'
+            pt_BR: 'Optional: comma separated retriever IDs (e.g. id1,id2,id3).'
+            zh_Hans: 'Optional: comma separated retriever IDs (e.g. id1,id2,id3).'
+          label:
+            en_US: Retriever IDs
+            ja_JP: リトリーバーID一覧
+            pt_BR: Retriever IDs
+            zh_Hans: Retriever IDs
+          llm_description: Comma separated retriever IDs.
+          max: null
+          min: null
+          name: retriever_ids
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          name: ''
+          retriever_ids: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: AddChat
+        tool_configurations: {}
+        tool_description: 新しいチャットルームを作成します。名前は必須。モデル/テンプレート/リトリーバーは任意です。
+        tool_label: AddChat
+        tool_name: add_chat
+        tool_node_version: '2'
+        tool_parameters:
+          name:
+            type: mixed
+            value: DifyRAGありチャット
+          retriever_ids:
+            type: mixed
+            value: '{{#1778466220985.retriever_id#}}'
+        type: tool
+      height: 52
+      id: '1778466365940'
+      position:
+        x: 3420
+        y: 20
+      positionAbsolute:
+        x: 3420
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "\ndef main(arg1: list[dict]):\n    chat_id = arg1[0][\"data\"][\"id\"\
+          ]\n    return {\n        \"chat_id\": chat_id,\n    }\n"
+        code_language: python3
+        outputs:
+          chat_id:
+            children: null
+            type: string
+        selected: false
+        title: chat_id抽出
+        type: code
+        variables:
+        - value_selector:
+          - '1778466365940'
+          - json
+          value_type: array[object]
+          variable: arg1
+      height: 52
+      id: '1778466393999'
+      position:
+        x: 3762
+        y: 20
+      positionAbsolute:
+        x: 3762
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the chat room ID to post the message to.
+            ja_JP: メッセージを投稿するチャットルームのIDを指定します。
+            pt_BR: Specify the chat room ID to post the message to.
+            zh_Hans: Specify the chat room ID to post the message to.
+          label:
+            en_US: Chat Room ID
+            ja_JP: チャットルームID
+            pt_BR: Chat Room ID
+            zh_Hans: Chat Room ID
+          llm_description: The ID of the chat room to post the message to.
+          max: null
+          min: null
+          name: chat_room_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The message content to post.
+            ja_JP: 投稿するメッセージの内容。
+            pt_BR: The message content to post.
+            zh_Hans: The message content to post.
+          label:
+            en_US: Message Content
+            ja_JP: メッセージ内容
+            pt_BR: Message Content
+            zh_Hans: Message Content
+          llm_description: The user message content to post to the chat room.
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          chat_room_id: ''
+          content: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: AddChatMessages
+        tool_configurations: {}
+        tool_description: チャットルームにユーザーメッセージを投稿します。チャットルームIDとメッセージ内容の指定が必要です。
+        tool_label: AddChatMessages
+        tool_name: add_chat_messages
+        tool_node_version: '2'
+        tool_parameters:
+          chat_room_id:
+            type: mixed
+            value: '{{#1778466393999.chat_id#}}'
+          content:
+            type: mixed
+            value: ファイルの中身の解説をして
+        type: tool
+      height: 52
+      id: '1778466484000'
+      position:
+        x: 4104
+        y: 20
+      positionAbsolute:
+        x: 4104
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the chat room ID to generate AI response.
+            ja_JP: AI回答を生成するチャットルームのIDを指定します。
+            pt_BR: Specify the chat room ID to generate AI response.
+            zh_Hans: Specify the chat room ID to generate AI response.
+          label:
+            en_US: Chat Room ID
+            ja_JP: チャットルームID
+            pt_BR: Chat Room ID
+            zh_Hans: Chat Room ID
+          llm_description: The ID of the chat room to generate the AI response in.
+          max: null
+          min: null
+          name: chat_room_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          chat_room_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: CreateNextAiMessage
+        tool_configurations: {}
+        tool_description: チャットルームでAIの回答を生成します。チャットルームIDの指定が必要です。AddChatMessagesの後に使用してください。
+        tool_label: CreateNextAiMessage
+        tool_name: create_next_ai_message
+        tool_node_version: '2'
+        tool_parameters:
+          chat_room_id:
+            type: mixed
+            value: '{{#1778466393999.chat_id#}}'
+        type: tool
+      height: 52
+      id: '1778466522319'
+      position:
+        x: 4446
+        y: 20
+      positionAbsolute:
+        x: 4446
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        outputs:
+        - value_selector:
+          - '1778474748936'
+          - json
+          value_type: array[object]
+          variable: result
+        selected: false
+        title: 終了
+        type: end
+      height: 88
+      id: '1778466540109'
+      position:
+        x: 6156
+        y: 2
+      positionAbsolute:
+        x: 6156
+        y: 2
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas: []
+        params: {}
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: RetrieverList
+        tool_configurations: {}
+        tool_description: リトリーバーの一覧を取得します。
+        tool_label: RetrieverList
+        tool_name: retriever_list
+        tool_node_version: '2'
+        tool_parameters: {}
+        type: tool
+      height: 52
+      id: '1778474633397'
+      position:
+        x: 3078
+        y: 20
+      positionAbsolute:
+        x: 3078
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify chat room id to delete the conversation history.
+            ja_JP: 会話履歴を削除するチャットルームのIDを指定します。
+            pt_BR: Specify chat room id to delete the conversation history.
+            zh_Hans: Specify chat room id to delete the conversation history.
+          label:
+            en_US: Chat Room ID
+            ja_JP: チャットルームID
+            pt_BR: Chat Room ID
+            zh_Hans: Chat Room ID
+          llm_description: Specify chat room id to delete the conversation history.
+          max: null
+          min: null
+          name: chat_room_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          chat_room_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: DeleteChatMessage
+        tool_configurations: {}
+        tool_description: チャットルームの会話履歴の削除 最新の会話が1件削除されます。 チャットルームIDの指定が必要です。
+        tool_label: DeleteChatMessage
+        tool_name: delete_chat_message
+        tool_node_version: '2'
+        tool_parameters:
+          chat_room_id:
+            type: mixed
+            value: '{{#1778466393999.chat_id#}}'
+        type: tool
+      height: 52
+      id: '1778474670486'
+      position:
+        x: 4788
+        y: 20
+      positionAbsolute:
+        x: 4788
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the chat room ID to delete.
+            ja_JP: 削除対象のチャットルームIDを指定します。
+            pt_BR: Specify the chat room ID to delete.
+            zh_Hans: Specify the chat room ID to delete.
+          label:
+            en_US: Chat Room ID
+            ja_JP: チャットルームID
+            pt_BR: Chat Room ID
+            zh_Hans: Chat Room ID
+          llm_description: Specify the chat room ID to delete.
+          max: null
+          min: null
+          name: chat_room_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          chat_room_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: DeleteChat
+        tool_configurations: {}
+        tool_description: 指定したチャットルーム全体を削除します。チャットルームIDの指定が必要です。
+        tool_label: DeleteChat
+        tool_name: delete_chat
+        tool_node_version: '2'
+        tool_parameters:
+          chat_room_id:
+            type: mixed
+            value: '{{#1778466393999.chat_id#}}'
+        type: tool
+      height: 52
+      id: '1778474706291'
+      position:
+        x: 5130
+        y: 20
+      positionAbsolute:
+        x: 5130
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the retriever ID to delete.
+            ja_JP: 削除するリトリーバーのIDを指定します。
+            pt_BR: Specify the retriever ID to delete.
+            zh_Hans: Specify the retriever ID to delete.
+          label:
+            en_US: Retriever ID
+            ja_JP: リトリーバーID
+            pt_BR: Retriever ID
+            zh_Hans: Retriever ID
+          llm_description: The ID of the retriever to delete.
+          max: null
+          min: null
+          name: retriever_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          retriever_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: DeleteRetriever
+        tool_configurations: {}
+        tool_description: リトリーバー（RAGデータ）を削除します。リトリーバーIDの指定が必要です。
+        tool_label: DeleteRetriever
+        tool_name: delete_retriever
+        tool_node_version: '2'
+        tool_parameters:
+          retriever_id:
+            type: mixed
+            value: '{{#1778466220985.retriever_id#}}'
+        type: tool
+      height: 52
+      id: '1778474726834'
+      position:
+        x: 5472
+        y: 20
+      positionAbsolute:
+        x: 5472
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Specify the file ID to delete.
+            ja_JP: 削除するファイルのIDを指定します。
+            pt_BR: Specify the file ID to delete.
+            zh_Hans: Specify the file ID to delete.
+          label:
+            en_US: File ID
+            ja_JP: ファイルID
+            pt_BR: File ID
+            zh_Hans: File ID
+          llm_description: The ID of the file to delete.
+          max: null
+          min: null
+          name: file_id
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          file_id: ''
+        provider_id: fujitsu/fujitsu/fujitsu
+        provider_name: fujitsu/fujitsu/fujitsu
+        provider_type: builtin
+        selected: false
+        title: DeleteFile
+        tool_configurations: {}
+        tool_description: アップロード済みファイルを削除します。ファイルIDの指定が必要です。
+        tool_label: DeleteFile
+        tool_name: delete_file
+        tool_node_version: '2'
+        tool_parameters:
+          file_id:
+            type: mixed
+            value: '{{#1778464980583.file_id#}}'
+        type: tool
+      height: 52
+      id: '1778474748936'
+      position:
+        x: 5814
+        y: 20
+      positionAbsolute:
+        x: 5814
+        y: 20
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -47.772450112709805
+      y: 382.33537319125753
+      zoom: 0.8040888484979258
+  rag_pipeline_variables: []

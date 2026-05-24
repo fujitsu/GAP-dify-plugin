@@ -1,4 +1,4 @@
-## 概要
+﻿## 概要
 
 本プラグインは、Dify 上で Generative AI Platform（GAP）API を利用可能にするためのプラグインです。
 GAP API と Dify を統合することで、Dify のワークフロー内から GAP の LLM との会話機能を活用できます。
